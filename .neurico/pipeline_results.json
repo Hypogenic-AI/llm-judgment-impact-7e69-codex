@@ -1,13 +1,26 @@
 {
-  "success": false,
+  "success": true,
   "stages": {
     "resource_finder": {
-      "success": false,
-      "completion_marker": null,
-      "outputs": {},
+      "success": true,
+      "completion_marker": "/workspaces/llm-judgment-impact-7e69-codex/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/workspaces/llm-judgment-impact-7e69-codex/literature_review.md",
+        "resources_catalog": "/workspaces/llm-judgment-impact-7e69-codex/resources.md",
+        "papers_dir": "/workspaces/llm-judgment-impact-7e69-codex/papers",
+        "datasets_dir": "/workspaces/llm-judgment-impact-7e69-codex/datasets",
+        "code_dir": "/workspaces/llm-judgment-impact-7e69-codex/code"
+      },
       "log_file": "/workspaces/llm-judgment-impact-7e69-codex/logs/resource_finder_codex.log",
       "transcript_file": "/workspaces/llm-judgment-impact-7e69-codex/logs/resource_finder_codex_transcript.jsonl",
-      "elapsed_time": 3.8487884998321533
+      "elapsed_time": 371.8353650569916
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 779.106437921524,
+      "log_file": "/workspaces/llm-judgment-impact-7e69-codex/logs/execution_codex.log",
+      "transcript_file": "/workspaces/llm-judgment-impact-7e69-codex/logs/execution_codex_transcript.jsonl"
     }
   },
   "work_dir": "/workspaces/llm-judgment-impact-7e69-codex"

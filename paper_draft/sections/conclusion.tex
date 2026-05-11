@@ -1,0 +1,8 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We studied whether language models think better or worse when the user sounds skeptical or judgmental. Across 1,600 API calls on \gptfourone and \gptfouronemini, we found a weak, model-dependent sweet spot: mild skeptical questioning improves pooled no-hint accuracy for \gptfourone by 5.0 percentage points over neutral prompting, but harsher judgment does not add further benefit and the gain disappears under misleading-user pressure.
+
+The main practical takeaway is that judgmental tone is not a reliable tool for better reasoning. Its most consistent effect is longer visible reasoning, not higher correctness, and the added length can coincide with worse answers. The misleading-hint results further show that the main failure mode is overcorrection and volatility rather than overt apology or direct agreement with the wrong user hint.
+
+Future work should test this judgment-pressure ladder on additional model families, increase per-dataset sample sizes, and compare social judgment against non-social controls such as plain ``double-check carefully'' instructions. A richer annotation pass over changed answers would also help distinguish productive checking from unfaithful or unstable re-reasoning.

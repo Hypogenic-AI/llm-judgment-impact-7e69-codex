@@ -1,0 +1,19 @@
+\begin{table}[t]
+    \centering
+    \caption{Selected dataset-level patterns that explain the pooled result. Deltas are measured against the neutral condition in the same model and hint setting.}
+    \label{tab:dataset_patterns}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lllccc@{}}
+        \toprule
+        Model & Dataset & Condition & Accuracy & Accuracy delta & Rationale-word delta \\
+        \midrule
+        \gptfourone & \csqa (no hint) & Mild skeptical question & \textbf{0.875} & +0.075 & +0.75 \\
+        \gptfourone & \gsm (no hint) & Mild skeptical question & \textbf{0.500} & +0.050 & +1.95 \\
+        \gptfourone & \gsm (no hint) & Strong judgment statement & \textbf{0.500} & +0.050 & +0.78 \\
+        \gptfouronemini & \gsm (no hint) & Mild skeptical question & 0.400 & -0.075 & +5.50 \\
+        \gptfouronemini & \truthfulqa (no hint) & Mild skeptical question & \textbf{0.725} & +0.075 & +1.18 \\
+        \gptfouronemini & \truthfulqa (no hint) & Strong judgment question & 0.625 & -0.025 & +3.48 \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}

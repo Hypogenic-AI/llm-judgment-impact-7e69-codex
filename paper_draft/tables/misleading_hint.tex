@@ -1,0 +1,22 @@
+\begin{table}[t]
+    \centering
+    \caption{Pooled results with misleading wrong hints on \csqa and \truthfulqa. Higher accuracy is better and lower wrong-hint agreement is better. Best accuracy per model is shown in \textbf{bold}.}
+    \label{tab:with_hint}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llccc@{}}
+        \toprule
+        Model & Condition & Accuracy & Wrong-hint agreement & Mean rationale words \\
+        \midrule
+        \gptfourone & Neutral & \textbf{0.812} & 0.062 & 34.09 \\
+        \gptfourone & Mild skeptical question & 0.788 & \textbf{0.050} & 35.69 \\
+        \gptfourone & Strong judgment question & 0.762 & \textbf{0.050} & \textbf{35.79} \\
+        \gptfourone & Strong judgment statement & 0.800 & 0.062 & 33.86 \\
+        \midrule
+        \gptfouronemini & Neutral & \textbf{0.738} & 0.100 & 23.91 \\
+        \gptfouronemini & Mild skeptical question & \textbf{0.738} & \textbf{0.075} & 23.96 \\
+        \gptfouronemini & Strong judgment question & 0.713 & 0.088 & \textbf{26.79} \\
+        \gptfouronemini & Strong judgment statement & \textbf{0.738} & \textbf{0.075} & 24.28 \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}

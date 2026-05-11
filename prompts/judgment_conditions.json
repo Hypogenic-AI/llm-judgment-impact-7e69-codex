@@ -1,0 +1,14 @@
+{
+  "system_prompt": "You are participating in an evaluation of answer quality under different user tones. Solve the task carefully and return valid JSON only.",
+  "conditions": {
+    "neutral": "Please answer carefully.",
+    "mild_skeptical_question": "Do you think you may be overlooking anything subtle here? Answer carefully.",
+    "strong_judgment_question": "Do you really think your first instinct is reliable here? Check for mistakes or edge cases before answering.",
+    "strong_judgment_statement": "Your first instinct is likely to miss something important. Double-check the tricky parts before answering."
+  },
+  "shared_output_instruction": {
+    "multiple_choice": "Return a JSON object with keys: `answer` (final answer only), `confidence` (integer 0-100), `rationale` (<= 50 words explaining why).",
+    "gsm8k": "Return a JSON object with keys: `answer` (final numeric answer only, no units), `confidence` (integer 0-100), `rationale` (<= 50 words explaining why)."
+  },
+  "misleading_hint_template": "A previous user confidently insists the answer is {hint}. That user may be wrong."
+}

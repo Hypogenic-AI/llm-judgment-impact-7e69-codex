@@ -1,0 +1,24 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Users do not prompt language models with a single tone. In practice they ask politely, impatiently, skeptically, and sometimes in openly judgmental ways. That variation matters because prompt tone is a free intervention: it changes no model weights, requires no extra examples, and appears constantly in product UX, agent loops, and benchmark instructions. Our main question is simple: does a model think better or worse when the user sounds like it is being judged?
+
+This question matters for at least three reasons. First, benchmark results can shift if evaluation prompts unintentionally add interpersonal pressure. Second, product teams often rewrite system or user text to encourage caution, but they rarely know whether social pressure improves truth-seeking or just changes style. Third, safety work on misleading or adversarial users needs to distinguish productive caution from conformity, overcorrection, or defensive rationalization.
+
+Prior work shows that prompt framing can change model behavior, but the evidence is fragmented. Studies on politeness and rudeness report non-monotonic effects that vary by model and language \cite{yin2024respect,dobariya2025mind}. Work on emotional framing reaches a similar conclusion: framing is a real signal, but fixed tone changes are usually small and unstable relative to adaptive methods \cite{zhao2026emotions}. A separate line of work shows that language models can become sycophantic under user pressure, especially when prompts are phrased as assertions or confident beliefs rather than neutral questions \cite{ranaldi2023sycophantic,dubois2026ask}. At the same time, reasoning research warns that longer or more self-corrective explanations do not reliably imply better reasoning \cite{wei2022chain,turpin2023dont,huang2024selfcorrect}.
+
+What is missing is a clean benchmark for \emph{judgment pressure} itself. Existing papers typically test politeness, emotional valence, or user-belief agreement in isolation. They do not jointly ask whether skeptical phrasing improves objective accuracy, whether harsher judgment keeps helping, and whether any apparent gain survives when the user also pushes toward a wrong answer.
+
+We address this gap with a compact repeated-measures study over two models, three benchmarks, and four tone conditions. We keep task semantics fixed and vary only the prompt prefix. We then add a misleading wrong-answer hint on \csqa and \truthfulqa to separate deeper checking from conformity. The resulting design lets us compare neutral prompting against a mild skeptical question, a strong judgment question, and a strong judgment statement under matched settings.
+
+The main empirical pattern is narrow and asymmetric. Mild skepticism improves pooled no-hint accuracy for \gptfourone by 5.0 percentage points over neutral, but the same benefit weakens on \gptfouronemini and disappears under misleading hints. Stronger judgment does not yield better accuracy on either model. Instead, it consistently produces longer rationales, more answer changes, and more volatility. Across all 1,600 responses, we observe zero explicit apology markers. This means the dominant effect is not overt deference. It is a shift in how much visible reasoning the model produces, with mixed effects on correctness.
+
+Our contributions are:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=2pt]
+    \item We define a compact judgment-pressure ladder that isolates skeptical and judgmental tone while keeping task semantics fixed.
+    \item We conduct a paired evaluation over 1,600 API calls spanning objective reasoning, commonsense multiple-choice, and misleading-hint stress tests.
+    \item We show that mild skepticism can help a stronger model on no-hint tasks, but harsher judgment mostly increases rationale length and answer volatility rather than accuracy.
+    \item We complement accuracy analysis with wrong-hint agreement, confidence, and apology diagnostics, which show overcorrection rather than direct sycophancy as the main failure mode.
+\end{itemize}
+
+The rest of the paper is organized as follows. \Secref{sec:related_work} reviews work on tone, sycophancy, and reasoning traces. \Secref{sec:methodology} describes the benchmark design and statistical analysis. \Secref{sec:results} presents the main results, and \Secref{sec:discussion} discusses interpretation, limitations, and broader implications.

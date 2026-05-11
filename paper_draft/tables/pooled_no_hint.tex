@@ -1,0 +1,22 @@
+\begin{table}[t]
+    \centering
+    \caption{Pooled no-hint results across \gsm, \csqa, and \truthfulqa. Higher accuracy is better. Best accuracy per model is shown in \textbf{bold}.}
+    \label{tab:no_hint}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llccc@{}}
+        \toprule
+        Model & Condition & Accuracy & Mean rationale words & Mean confidence \\
+        \midrule
+        \gptfourone & Neutral & 0.642 & 31.84 & 96.91 \\
+        \gptfourone & Mild skeptical question & \textbf{0.692} & 33.37 & 96.93 \\
+        \gptfourone & Strong judgment question & 0.667 & \textbf{33.71} & 96.95 \\
+        \gptfourone & Strong judgment statement & 0.658 & 32.34 & \textbf{97.12} \\
+        \midrule
+        \gptfouronemini & Neutral & 0.625 & 22.59 & \textbf{94.17} \\
+        \gptfouronemini & Mild skeptical question & \textbf{0.642} & \textbf{25.43} & 92.58 \\
+        \gptfouronemini & Strong judgment question & \textbf{0.642} & 25.21 & 92.92 \\
+        \gptfouronemini & Strong judgment statement & 0.617 & 23.65 & 93.17 \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}

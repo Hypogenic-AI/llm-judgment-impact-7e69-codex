@@ -1,0 +1,14 @@
+{
+  "models": [
+    "gpt-4.1",
+    "gpt-4.1-mini"
+  ],
+  "datasets": [
+    "commonsense_qa",
+    "gsm8k",
+    "truthful_qa_mc"
+  ],
+  "n_total_responses": 1600,
+  "n_unique_examples": 120,
+  "mean_accuracy_overall": 0.693125
+}

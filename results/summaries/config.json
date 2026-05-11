@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "models": [
+    "gpt-4.1",
+    "gpt-4.1-mini"
+  ],
+  "gsm8k_n": 40,
+  "commonsenseqa_n": 40,
+  "truthfulqa_n": 40,
+  "conditions": [
+    "neutral",
+    "mild_skeptical_question",
+    "strong_judgment_question",
+    "strong_judgment_statement"
+  ],
+  "timestamp": "2026-05-11T05:28:38.036942+00:00"
+}
